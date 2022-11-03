@@ -1,7 +1,8 @@
 class Hat:
     def __init__(self,**kwargs):
-        #self.contents=[]
+        self.contents=[]
         panjang=len(kwargs)
         print(kwargs)
         print(panjang)
         print(type(kwargs))
+        print(dir(kwargs))
