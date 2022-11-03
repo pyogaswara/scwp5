@@ -1,4 +1,4 @@
-def tulis(**args):
-    print("tulisan",args)
+def tulis(**kwargs):
+    print(kwargs)
 
-print(tulis("satu"))
+tulis(nomor=1,nomer=2)
