@@ -6,3 +6,5 @@ class Hat:
         print(panjang)
         print(type(kwargs))
         print(dir(kwargs))
+    def draw(self,number_of_balls_drawed):
+        pass
