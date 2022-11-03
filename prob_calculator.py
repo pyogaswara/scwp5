@@ -1,4 +1,4 @@
-class Hat():
+class Hat:
     def __init__(self,**kwargs):
-        
-        self.contents=[]
+        #self.contents=[]
+        print(kwargs)
