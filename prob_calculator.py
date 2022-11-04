@@ -31,16 +31,22 @@ class Hat:
 
 def experiment(**kwargs):
 
-    hat_instance=kwargs["hat"]
-    expected_balls=kwargs["expected_balls"]
-    num_balls_drawn=kwargs["num_balls_drawn"]
-    num_experiments=kwargs["num_experiments"]
+  hat_instance=kwargs["hat"]
+  expected_balls=kwargs["expected_balls"]
+  num_balls_drawn=kwargs["num_balls_drawn"]
+  num_experiments=kwargs["num_experiments"]
 
     #print(kwargs)
     #print(hat_instance)
     #print(expected_balls)
     #print(num_balls_drawn)
     #print(num_experiments)
-    hat_instance.draw(num_balls_drawn)
+  drawn_balls=hat_instance.draw(num_balls_drawn)
+  print(expected_balls)
+  print(drawn_balls.count("red"))
+  print(drawn_balls.count("green"))
+  if (drawn_balls.count("red") >= 2) and (drawn_balls.count("green")==1):
+    print("test")
+  
 
    # return kwargs, hat_instance, num_balls_drawn
