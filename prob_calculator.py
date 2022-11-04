@@ -22,22 +22,25 @@ class Hat:
             pop_index=random.randint(0,contents_size-1)
             self.drawn_balls.append(self.contents.pop(pop_index))
             contents_size=contents_size-1
+        print(self.drawn_balls)
         return self.drawn_balls
+        
       else:
         self.drawn_balls=self.contents
         return self.drawn_balls
 
 def experiment(**kwargs):
 
-    hat_instance=str(kwargs["hat"])
+    hat_instance=kwargs["hat"]
     expected_balls=kwargs["expected_balls"]
     num_balls_drawn=kwargs["num_balls_drawn"]
     num_experiments=kwargs["num_experiments"]
 
-    print(kwargs)
-    print(hat_instance)
-    print(expected_balls)
-    print(num_balls_drawn)
-    print(num_experiments)
+    #print(kwargs)
+    #print(hat_instance)
+    #print(expected_balls)
+    #print(num_balls_drawn)
+    #print(num_experiments)
+    hat_instance.draw(num_balls_drawn)
 
    # return kwargs, hat_instance, num_balls_drawn
