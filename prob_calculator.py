@@ -1,8 +1,10 @@
+import random
 class Hat:
     def __init__(self,**kwargs):
       self.contents=[]
       self.contents_keys=[]
       self.contents_values=[]
+      self.drawn_balls=[]
       print(kwargs)
       for keys in kwargs.keys():
         self.contents_keys.append(keys)
@@ -13,5 +15,11 @@ class Hat:
             self.contents.append(keys)
       print(self.contents)
       
-    def draw(self,number_of_balls_drawed):
-        pass
+    def draw(self,number_of_balls_drawn):
+      pass
+      for balls in range (number_of_balls_drawn):      
+        self.drawn_balls.append(self.contents.pop(random.randint(0,len(self.contents))))
+      print(self.drawn_balls)
+      print(self.contents)
+      
+      
