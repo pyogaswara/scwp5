@@ -17,16 +17,15 @@ class Hat:
       
     def draw(self,number_of_balls_drawn):
       print(len(self.contents))
-      if number_of_balls_drawn >= (len(self.contents)):
-        self.drawn_balls=self.contents
-        return self.drawn_balls
-      else:
-        for balls in range (number_of_balls_drawn):      
+      if number_of_balls_drawn <= (len(self.contents)):
+        for balls in range (0,number_of_balls_drawn):      
           self.drawn_balls.append(self.contents.pop(random.randint(0,len(self.contents))))
-
-        
         print(self.drawn_balls)
         print(self.contents)
         return self.drawn_balls
-      
+      else:
+        self.drawn_balls=self.contents
+        print(self.contents)
+        return self.drawn_balls
+       
       
