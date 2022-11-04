@@ -18,8 +18,11 @@ class Hat:
     def draw(self,number_of_balls_drawn):
       print(len(self.contents))
       if number_of_balls_drawn <= (len(self.contents)):
-        for balls in range (0,number_of_balls_drawn):      
-          self.drawn_balls.append(self.contents.pop(random.randint(0,len(self.contents))))
+        for balls in range (0,number_of_balls_drawn):    
+            pop_index=random.randint(0,len(self.contents))
+            print("bola",balls)
+            print("index",pop_index)
+            self.drawn_balls.append(self.contents.pop(pop_index))
         print(self.drawn_balls)
         print(self.contents)
         return self.drawn_balls
