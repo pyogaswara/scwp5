@@ -27,6 +27,17 @@ class Hat:
         self.drawn_balls=self.contents
         return self.drawn_balls
 
-def experiment(hat,expected_balls,num_balls_drawn,num_experiments):
-       
-      
+def experiment(**kwargs):
+
+    hat_instance=str(kwargs["hat"])
+    expected_balls=kwargs["expected_balls"]
+    num_balls_drawn=kwargs["num_balls_drawn"]
+    num_experiments=kwargs["num_experiments"]
+
+    print(kwargs)
+    print(hat_instance)
+    print(expected_balls)
+    print(num_balls_drawn)
+    print(num_experiments)
+
+   # return kwargs, hat_instance, num_balls_drawn
