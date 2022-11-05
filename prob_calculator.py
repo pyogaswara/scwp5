@@ -1,4 +1,6 @@
 import random
+import copy
+
 class Hat:
     def __init__(self,**kwargs):
       self.contents=[]
@@ -16,18 +18,20 @@ class Hat:
       print(self.contents)
       
     def draw(self,number_of_balls_drawn):
-      contents_size=len(self.contents)
-      if number_of_balls_drawn < (len(self.contents)):
+      self.contents_copy=copy.deepcopy(self.contents)
+      contents_size=len(self.contents_copy)
+      #self.contents_copy=copy.deepcopy(self.contents)
+      if number_of_balls_drawn < (len(self.contents_copy)):
         for balls in range (0,number_of_balls_drawn):    
             pop_index=random.randint(0,contents_size-1)
-            self.drawn_balls.append(self.contents.pop(pop_index))
+            self.drawn_balls.append(self.contents_copy.pop(pop_index))
             contents_size=contents_size-1
         print(self.drawn_balls)
         #self.contents=self.contents+self.drawn_balls
-        print("bola di topi ada:",len(self.contents))
+        print("bola di topi ada:",len(self.contents_copy))
         return self.drawn_balls        
       else:
-        self.drawn_balls=self.contents
+        self.drawn_balls=self.contents_copy
         return self.drawn_balls
       #print("waduuuuh",self.contents)
     
@@ -51,6 +55,7 @@ def experiment(**kwargs):
  
 
   keinginan_terpenuhi=0
+  #hat_instance_copy=copy.deepcopy(hat_instance)
   for percobaan in range (0,6):
     print("percobaan ke",percobaan+1)
     drawn_balls=hat_instance.draw(num_balls_drawn)
