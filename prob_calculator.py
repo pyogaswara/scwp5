@@ -10,7 +10,6 @@ class Hat:
       print(kwargs)
       for keys in kwargs.keys():
         self.contents_keys.append(keys)
-      #print(self.contents_keys)
       for keys in kwargs.keys():
         ball_multiplier=kwargs[keys]
         for ball in range (0,ball_multiplier):
@@ -33,7 +32,7 @@ class Hat:
       else:
         self.drawn_balls_copy=self.contents_copy
         return self.drawn_balls_copy
-      #print("waduuuuh",self.contents)
+
     
 
 def experiment(**kwargs):
@@ -43,40 +42,33 @@ def experiment(**kwargs):
   num_balls_drawn=kwargs["num_balls_drawn"]
   num_experiments=kwargs["num_experiments"]
 
-    #print(kwargs)
-    #print(hat_instance)
-    #print(expected_balls)
-    #print(num_balls_drawn)
-    #print(num_experiments)
   
   print("diinginkan")
   print(expected_balls)
   print("yang terambil")
  
 
-  keinginan_terpenuhi=0
-  #hat_instance_copy=copy.deepcopy(hat_instance)
-  for percobaan in range (0,100):
-    print("percobaan ke",percobaan+1)
+  num_of_occurence=0
+
+  for experiment in range (0,num_experiments):
+    print("experiment : ",experiment+1)
     drawn_balls=hat_instance.draw(num_balls_drawn)
     print("jumlah bola diambil:",num_balls_drawn,drawn_balls)
-    daftar_permintaan=[]
+    expected_balls_list=[]
     for color in expected_balls.keys():
-      z=drawn_balls.count(color)
-      mintanya=(expected_balls[color])
-      print(color,"ada",z,"padahal mintanya",mintanya)
-      if z >= mintanya:
-        daftar_permintaan.append(1)
+      num_color=drawn_balls.count(color)
+      num_expected_color=(expected_balls[color])
+      print(color,"ada",num_color,"padahal mintanya",num_expected_color)
+      if num_color >= num_expected_color:
+        expected_balls_list.append(1)
       else:
-        daftar_permintaan.append(0)
-    print(daftar_permintaan)
-    if daftar_permintaan.__contains__(0):
-      print("huhu")
-      keinginan_terpenuhi=keinginan_terpenuhi+0
+        expected_balls_list.append(0)
+    print(expected_balls_list)
+    if expected_balls_list.__contains__(0):
+      num_of_occurence=num_of_occurence+0
     else:
-      print("haha")
-      keinginan_terpenuhi=keinginan_terpenuhi+1
-  print("yang sesuai keinginan ada:",keinginan_terpenuhi)
+      num_of_occurence=num_of_occurence+1
+  print("Probability :",(num_of_occurence/num_experiments))
   
     
   
