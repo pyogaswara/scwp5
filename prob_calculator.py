@@ -23,14 +23,13 @@ class Hat:
             self.drawn_balls.append(self.contents.pop(pop_index))
             contents_size=contents_size-1
         print(self.drawn_balls)
-        print("bola di topi ada:",len(self.contents))
         #self.contents=self.contents+self.drawn_balls
-        #print("setelah dikembalikan",self.contents)
-        return self.drawn_balls
-        
+        print("bola di topi ada:",len(self.contents))
+        return self.drawn_balls        
       else:
         self.drawn_balls=self.contents
         return self.drawn_balls
+      #print("waduuuuh",self.contents)
     
 
 def experiment(**kwargs):
@@ -75,6 +74,7 @@ def experiment(**kwargs):
       print("haha")
       keinginan_terpenuhi=keinginan_terpenuhi+1
   print(keinginan_terpenuhi)
+  
     
   
 
