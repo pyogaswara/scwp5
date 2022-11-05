@@ -22,7 +22,8 @@ class Hat:
             pop_index=random.randint(0,contents_size-1)
             self.drawn_balls.append(self.contents.pop(pop_index))
             contents_size=contents_size-1
-        #print(self.drawn_balls)
+        print(self.drawn_balls)
+        print(self.contents)
         return self.drawn_balls
         
       else:
