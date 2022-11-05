@@ -47,10 +47,27 @@ def experiment(**kwargs):
   print("yang terambil")
   print(drawn_balls)
 
-  for color in expected_balls.keys():
-    z=drawn_balls.count(color)
-    mintanya=(expected_balls[color])
-    print(color,"ada",z,"padahal mintanya",mintanya)
+  keinginan_terpenuhi=0
+  for percobaan in range (0,5):
+  
+    daftar_permintaan=[]
+    for color in expected_balls.keys():
+      z=drawn_balls.count(color)
+      mintanya=(expected_balls[color])
+      print(color,"ada",z,"padahal mintanya",mintanya)
+      print("test")
+      if z >= mintanya:
+        daftar_permintaan.append(1)
+      else:
+        daftar_permintaan.append(0)
+    print(daftar_permintaan)
+    if daftar_permintaan.__contains__(0):
+      print("huhu")
+      keinginan_terpenuhi=keinginan_terpenuhi+0
+    else:
+      print("haha")
+      keinginan_terpenuhi=keinginan_terpenuhi+1
+    print(keinginan_terpenuhi)
     
   
 
