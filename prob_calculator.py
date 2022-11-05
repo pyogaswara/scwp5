@@ -19,20 +19,20 @@ class Hat:
       
     def draw(self,number_of_balls_drawn):
       self.contents_copy=copy.deepcopy(self.contents)
+      self.drawn_balls_copy=copy.deepcopy(self.drawn_balls)
       contents_size=len(self.contents_copy)
       #self.contents_copy=copy.deepcopy(self.contents)
       if number_of_balls_drawn < (len(self.contents_copy)):
         for balls in range (0,number_of_balls_drawn):    
             pop_index=random.randint(0,contents_size-1)
-            self.drawn_balls.append(self.contents_copy.pop(pop_index))
+            self.drawn_balls_copy.append(self.contents_copy.pop(pop_index))
             contents_size=contents_size-1
-        print(self.drawn_balls)
-        #self.contents=self.contents+self.drawn_balls
-        print("bola di topi ada:",len(self.contents_copy))
-        return self.drawn_balls        
+        #print(self.drawn_balls_copy)
+        print("bola di topi ada:",len(self.contents_copy),self.contents_copy)
+        return self.drawn_balls_copy        
       else:
-        self.drawn_balls=self.contents_copy
-        return self.drawn_balls
+        self.drawn_balls_copy=self.contents_copy
+        return self.drawn_balls_copy
       #print("waduuuuh",self.contents)
     
 
@@ -56,17 +56,15 @@ def experiment(**kwargs):
 
   keinginan_terpenuhi=0
   #hat_instance_copy=copy.deepcopy(hat_instance)
-  for percobaan in range (0,6):
+  for percobaan in range (0,100):
     print("percobaan ke",percobaan+1)
     drawn_balls=hat_instance.draw(num_balls_drawn)
-    print("jumlah bola diambil:",num_balls_drawn)
-    print(drawn_balls)
+    print("jumlah bola diambil:",num_balls_drawn,drawn_balls)
     daftar_permintaan=[]
     for color in expected_balls.keys():
       z=drawn_balls.count(color)
       mintanya=(expected_balls[color])
       print(color,"ada",z,"padahal mintanya",mintanya)
-      print("test")
       if z >= mintanya:
         daftar_permintaan.append(1)
       else:
@@ -78,7 +76,7 @@ def experiment(**kwargs):
     else:
       print("haha")
       keinginan_terpenuhi=keinginan_terpenuhi+1
-  print(keinginan_terpenuhi)
+  print("yang sesuai keinginan ada:",keinginan_terpenuhi)
   
     
   
