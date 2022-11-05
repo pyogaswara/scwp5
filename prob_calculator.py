@@ -41,15 +41,16 @@ def experiment(**kwargs):
     #print(expected_balls)
     #print(num_balls_drawn)
     #print(num_experiments)
-  drawn_balls=hat_instance.draw(num_balls_drawn)
+  
   print("diinginkan")
   print(expected_balls)
   print("yang terambil")
-  print(drawn_balls)
+ 
 
   keinginan_terpenuhi=0
   for percobaan in range (0,5):
-  
+    drawn_balls=hat_instance.draw(num_balls_drawn)
+    print(drawn_balls)
     daftar_permintaan=[]
     for color in expected_balls.keys():
       z=drawn_balls.count(color)
