@@ -13,7 +13,7 @@ class Hat:
         ball_multiplier=kwargs[keys]
         for ball in range (0,ball_multiplier):
             self.contents.append(keys)
-      
+
     def draw(self,number_of_balls_drawn):
       self.contents_copy=copy.deepcopy(self.contents)
       self.drawn_balls_copy=copy.deepcopy(self.drawn_balls)
