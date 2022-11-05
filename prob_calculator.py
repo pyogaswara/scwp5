@@ -49,6 +49,7 @@ def experiment(**kwargs):
 
   keinginan_terpenuhi=0
   for percobaan in range (0,5):
+    print("percobaan ke",percobaan+1)
     drawn_balls=hat_instance.draw(num_balls_drawn)
     print(drawn_balls)
     daftar_permintaan=[]
@@ -68,7 +69,7 @@ def experiment(**kwargs):
     else:
       print("haha")
       keinginan_terpenuhi=keinginan_terpenuhi+1
-    print(keinginan_terpenuhi)
+  print(keinginan_terpenuhi)
     
   
 
