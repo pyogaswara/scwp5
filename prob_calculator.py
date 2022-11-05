@@ -8,7 +8,7 @@ class Hat:
       print(kwargs)
       for keys in kwargs.keys():
         self.contents_keys.append(keys)
-      print(self.contents_keys)
+      #print(self.contents_keys)
       for keys in kwargs.keys():
         ball_multiplier=kwargs[keys]
         for ball in range (0,ball_multiplier):
@@ -22,7 +22,7 @@ class Hat:
             pop_index=random.randint(0,contents_size-1)
             self.drawn_balls.append(self.contents.pop(pop_index))
             contents_size=contents_size-1
-        print(self.drawn_balls)
+        #print(self.drawn_balls)
         return self.drawn_balls
         
       else:
@@ -42,11 +42,17 @@ def experiment(**kwargs):
     #print(num_balls_drawn)
     #print(num_experiments)
   drawn_balls=hat_instance.draw(num_balls_drawn)
+  print("diinginkan")
   print(expected_balls)
-  print(drawn_balls.count("red"))
-  print(drawn_balls.count("green"))
-  if (drawn_balls.count("red") >= 2) and (drawn_balls.count("green")==1):
-    print("test")
+  print("yang terambil")
+  print(drawn_balls)
+
+  for color in expected_balls.keys():
+    z=drawn_balls.count(color)
+    mintanya=(expected_balls[color])
+    print(color,"ada",z,"padahal mintanya",mintanya)
+    
   
 
-   # return kwargs, hat_instance, num_balls_drawn
+
+  
